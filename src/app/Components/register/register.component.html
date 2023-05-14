@@ -1,0 +1,71 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-2 col-8">
+            <div class="card login shadow p-3 mb-5 bg-white rounded ">
+                <div class="card-body">
+                    <h3>User Registration</h3>
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
+                        <div class="form-group">
+                            <input class="form-control" type="text" formControlName="fullname" placeholder="Full Name"
+                                style="width:50%" required pattern="[a-zA-Z ]*" minlength="3">
+                                <span *ngIf="registerForm.controls['fullname'].invalid && (registerForm.controls['fullname'].dirty || registerForm.controls['fullname'].touched)" >
+                                    <span *ngIf="registerForm.controls['fullname'].errors.required" style="color:red;">
+                                    Name is required.
+                                    </span>  
+                                    <span *ngIf="registerForm.controls['fullname'].errors.pattern" style="color:red;">
+                                        Only alphabets allowed in username.
+                                    </span>             
+                                 
+                                    <span *ngIf="registerForm.controls['fullname'].errors.minlength" style="color:red;">
+                                        Please add lastname also .
+                                    </span> 
+                                </span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" formControlName="email" placeholder="Email"
+                                style="width:50%"  required email>
+                                <span *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" >
+                                    <span *ngIf="registerForm.controls['email'].errors.required" style="color:red;">
+                                    Email is required.
+                                    </span>  
+                                    <span *ngIf="registerForm.controls['email'].errors.email" style="color:red;">Email must be a valid email address</span>            
+                                       
+                                </span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" formControlName="username" placeholder="Username"
+                                style="width:50%" required minlength="3" maxlength="10" >
+                                <span *ngIf="registerForm.controls['username'].invalid && (registerForm.controls['username'].dirty || registerForm.controls['username'].touched)" >
+                                    <span *ngIf="registerForm.controls['username'].errors.required" style="color:red;">
+                                    Username is required.
+                                    </span>              
+                                    <span *ngIf="registerForm.controls['username'].errors.minlength" style="color:red;">
+                                        Username is too small.
+                                   </span>  
+                                   
+                                </span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" formControlName="password"
+                                placeholder="Password" style="width:50%" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$">
+                                <span *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" >
+                                    <span *ngIf="registerForm.controls['password'].errors.required" style="color:red;">
+                                    Password is required.
+                                    </span>              
+                                    <span *ngIf="registerForm.controls['password'].errors.pattern" style="color:red;">
+                                     Set a strong password.
+                                    </span>
+                                </span>
+                        </div>
+                    
+                        
+                        <input type="submit" class="btn btn-secondary align-right" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+
+            <br><br>

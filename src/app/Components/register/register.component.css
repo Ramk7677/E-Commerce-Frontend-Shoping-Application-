@@ -1,0 +1,13 @@
+.invalid-input {
+  color: red;
+}
+.login2{
+  background-image:  url(/assets/img/login.png);
+}
+.row{
+  margin-top: 15px;
+}
+
+.card[_ngcontent-c1] {
+  height: 700px;
+}

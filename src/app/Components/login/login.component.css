@@ -1,0 +1,12 @@
+.logini{
+     background-image:  url(/assets/img/login.png); 
+}
+.card{
+    height: 250px;
+}
+.row{
+    margin-top: 15px;
+}
+.card[_ngcontent-c1] {
+    height: 300px;
+}
